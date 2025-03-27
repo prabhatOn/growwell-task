@@ -1,0 +1,441 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Modern Courses - GrowWell Banking & Financial Skills Training</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="courses-styles.css">
+    <script defer src="script.js"></script>
+    <script defer src="courses-script.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- Navbar -->
+    <nav class="navbar">
+        <div class="logo">
+            <img src="./images/Grow-Well-Logo.jpg" alt="GrowWell Logo"> 
+        </div>
+        <ul class="nav-links">
+            <li><a href="./index.html">Home</a></li>
+            <li><a href="./About/index.html">About</a></li>
+            <li><a href="./courses.html" class="active">Courses</a></li>
+            <li><a href="./Contact_new/contact.html">Contact</a></li>
+        </ul>
+        <div class="search-container">
+            <input type="text" class="search-bar" placeholder="What do you want to learn?">
+            <button class="search-btn"><i class="fas fa-search"></i></button>
+        </div>
+        <div class="auth-buttons">
+            <a href="#" class="login">Log In</a>
+            <a href="#" class="join">Join for Free</a>
+        </div>
+        <div class="menu-toggle" id="menuToggle">
+            <i class="fas fa-bars"></i>
+        </div>
+    </nav>
+
+    <!-- Courses Hero Section -->
+    <section class="courses-hero-section">
+        <div class="courses-hero-container">
+            <div class="courses-hero-content">
+                <h1>Explore Our <span>Courses</span></h1>
+                <p>Discover comprehensive banking and financial training programs designed to elevate your career</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Modern Courses Layout -->
+    <div class="modern-courses-layout">
+        <!-- Sidebar Filters -->
+        <div class="courses-sidebar" id="coursesSidebar">
+            <div class="sidebar-section">
+                <h3>Filter Courses</h3>
+                
+                <div class="filter-group">
+                    <div class="filter-group-title">Categories</div>
+                    <div class="filter-options">
+                        <div class="filter-option">
+                            <input type="checkbox" id="cat-banking" checked>
+                            <label for="cat-banking">Banking</label>
+                        </div>
+                        <div class="filter-option">
+                            <input type="checkbox" id="cat-finance" checked>
+                            <label for="cat-finance">Finance</label>
+                        </div>
+                        <div class="filter-option">
+                            <input type="checkbox" id="cat-software" checked>
+                            <label for="cat-software">IT & Software</label>
+                        </div>
+                        <div class="filter-option">
+                            <input type="checkbox" id="cat-language" checked>
+                            <label for="cat-language">Language</label>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="filter-group">
+                    <div class="filter-group-title">Course Type</div>
+                    <div class="filter-options">
+                        <div class="filter-option">
+                            <input type="checkbox" id="type-certificate" checked>
+                            <label for="type-certificate">Professional Certificate</label>
+                        </div>
+                        <div class="filter-option">
+                            <input type="checkbox" id="type-course" checked>
+                            <label for="type-course">Course</label>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="filter-group">
+                    <div class="filter-group-title">Level</div>
+                    <div class="filter-options">
+                        <div class="filter-option">
+                            <input type="checkbox" id="level-beginner" checked>
+                            <label for="level-beginner">Beginner</label>
+                        </div>
+                        <div class="filter-option">
+                            <input type="checkbox" id="level-intermediate" checked>
+                            <label for="level-intermediate">Intermediate</label>
+                        </div>
+                        <div class="filter-option">
+                            <input type="checkbox" id="level-advanced" checked>
+                            <label for="level-advanced">Advanced</label>
+                        </div>
+                    </div>
+                </div>
+                
+                <button class="filter-button">Apply Filters</button>
+                <button class="reset-filters">Reset Filters</button>
+            </div>
+        </div>
+        
+        <!-- Courses Content -->
+        <div class="courses-content">
+            <button class="mobile-filter-toggle" id="mobileFilterToggle">
+                <i class="fas fa-filter"></i> Show Filters
+            </button>
+            
+            <div class="courses-header">
+                <div class="courses-title">
+                    <h2>Professional Certificates</h2>
+                    <p>Industry-recognized credentials to advance your career</p>
+                </div>
+                <div class="courses-actions">
+                    <div class="sort-dropdown">
+                        <button class="sort-btn">
+                            <i class="fas fa-sort"></i> Sort By <i class="fas fa-chevron-down"></i>
+                        </button>
+                        <div class="sort-dropdown-content">
+                            <a href="#" data-sort="popular">Most Popular</a>
+                            <a href="#" data-sort="newest">Newest</a>
+                            <a href="#" data-sort="price-low">Price: Low to High</a>
+                            <a href="#" data-sort="price-high">Price: High to Low</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="modern-courses-grid">
+                <!-- Modern Course Card 1 -->
+                <div class="modern-course-card" data-category="finance">
+                    <div class="modern-course-banner banner-purple">
+                        <div class="banner-content">
+                            <div class="banner-title">Data Analytics</div>
+                            <div class="banner-subtitle">Professional Certificate</div>
+                        </div>
+                    </div>
+                    <div class="modern-course-provider">
+                        <div class="provider-logo">
+                            <i class="fas fa-chart-line"></i>
+                        </div>
+                        <div class="provider-name">GrowWell Finance</div>
+                    </div>
+                    <div class="modern-course-content">
+                        <h3 class="modern-course-title">Data Analytics for Banking & Finance</h3>
+                        <div class="modern-course-type">Professional Certificate</div>
+                    </div>
+                </div>
+
+                <!-- Modern Course Card 2 -->
+                <div class="modern-course-card" data-category="banking">
+                    <div class="modern-course-banner banner-blue">
+                        <div class="banner-content">
+                            <div class="banner-title">Banking Operations</div>
+                            <div class="banner-subtitle">Essential Skills</div>
+                        </div>
+                    </div>
+                    <div class="modern-course-provider">
+                        <div class="provider-logo">
+                            <i class="fas fa-university"></i>
+                        </div>
+                        <div class="provider-name">GrowWell Banking</div>
+                    </div>
+                    <div class="modern-course-content">
+                        <h3 class="modern-course-title">Banking Operations Essentials</h3>
+                        <div class="modern-course-type">Course</div>
+                    </div>
+                </div>
+
+                <!-- Modern Course Card 3 -->
+                <div class="modern-course-card" data-category="software">
+                    <div class="modern-course-banner banner-pink">
+                        <div class="banner-content">
+                            <div class="banner-title">FinTech Development</div>
+                            <div class="banner-subtitle">New AI Skills</div>
+                        </div>
+                    </div>
+                    <div class="modern-course-provider">
+                        <div class="provider-logo">
+                            <i class="fas fa-laptop-code"></i>
+                        </div>
+                        <div class="provider-name">GrowWell Tech</div>
+                    </div>
+                    <div class="modern-course-content">
+                        <h3 class="modern-course-title">FinTech Application Development</h3>
+                        <div class="modern-course-type">Professional Certificate</div>
+                    </div>
+                </div>
+
+                <!-- Modern Course Card 4 -->
+                <div class="modern-course-card" data-category="finance">
+                    <div class="modern-course-banner banner-green">
+                        <div class="banner-content">
+                            <div class="banner-title">Investment Banking</div>
+                            <div class="banner-subtitle">Fundamentals</div>
+                        </div>
+                    </div>
+                    <div class="modern-course-provider">
+                        <div class="provider-logo">
+                            <i class="fas fa-money-bill-wave"></i>
+                        </div>
+                        <div class="provider-name">GrowWell Finance</div>
+                    </div>
+                    <div class="modern-course-content">
+                        <h3 class="modern-course-title">Investment Banking Fundamentals</h3>
+                        <div class="modern-course-type">Professional Certificate</div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="courses-header" style="margin-top: 4rem;">
+                <div class="courses-title">
+                    <h2>Specialized Courses</h2>
+                    <p>Focused training programs to build specific skills</p>
+                </div>
+            </div>
+            
+            <div class="modern-courses-grid">
+                <!-- Modern Course Card 5 -->
+                <div class="modern-course-card" data-category="software">
+                    <div class="modern-course-banner banner-teal">
+                        <div class="banner-content">
+                            <div class="banner-title">Python for Finance</div>
+                            <div class="banner-subtitle">Programming</div>
+                        </div>
+                    </div>
+                    <div class="modern-course-provider">
+                        <div class="provider-logo">
+                            <i class="fas fa-code"></i>
+                        </div>
+                        <div class="provider-name">GrowWell Tech</div>
+                    </div>
+                    <div class="modern-course-content">
+                        <h3 class="modern-course-title">Python for Financial Analysis</h3>
+                        <div class="modern-course-type">Course</div>
+                    </div>
+                </div>
+
+                <!-- Modern Course Card 6 -->
+                <div class="modern-course-card" data-category="banking">
+                    <div class="modern-course-banner banner-orange">
+                        <div class="banner-content">
+                            <div class="banner-title">Risk Management</div>
+                            <div class="banner-subtitle">Banking</div>
+                        </div>
+                    </div>
+                    <div class="modern-course-provider">
+                        <div class="provider-logo">
+                            <i class="fas fa-shield-alt"></i>
+                        </div>
+                        <div class="provider-name">GrowWell Banking</div>
+                    </div>
+                    <div class="modern-course-content">
+                        <h3 class="modern-course-title">Banking Risk Management</h3>
+                        <div class="modern-course-type">Professional Certificate</div>
+                    </div>
+                </div>
+
+                <!-- Modern Course Card 7 -->
+                <div class="modern-course-card" data-category="finance">
+                    <div class="modern-course-banner banner-blue">
+                        <div class="banner-content">
+                            <div class="banner-title">Wealth Management</div>
+                            <div class="banner-subtitle">Strategies</div>
+                        </div>
+                    </div>
+                    <div class="modern-course-provider">
+                        <div class="provider-logo">
+                            <i class="fas fa-coins"></i>
+                        </div>
+                        <div class="provider-name">GrowWell Finance</div>
+                    </div>
+                    <div class="modern-course-content">
+                        <h3 class="modern-course-title">Wealth Management Strategies</h3>
+                        <div class="modern-course-type">Course</div>
+                    </div>
+                </div>
+
+                <!-- Modern Course Card 8 -->
+                <div class="modern-course-card" data-category="language">
+                    <div class="modern-course-banner banner-purple">
+                        <div class="banner-content">
+                            <div class="banner-title">Business English</div>
+                            <div class="banner-subtitle">Banking</div>
+                        </div>
+                    </div>
+                    <div class="modern-course-provider">
+                        <div class="provider-logo">
+                            <i class="fas fa-language"></i>
+                        </div>
+                        <div class="provider-name">GrowWell Language</div>
+                    </div>
+                    <div class="modern-course-content">
+                        <h3 class="modern-course-title">Business English for Banking</h3>
+                        <div class="modern-course-type">Course</div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Pagination -->
+            <div class="courses-pagination">
+                <button class="pagination-btn"><i class="fas fa-chevron-left"></i></button>
+                <button class="pagination-btn active">1</button>
+                <button class="pagination-btn">2</button>
+                <button class="pagination-btn">3</button>
+                <button class="pagination-btn">...</button>
+                <button class="pagination-btn">8</button>
+                <button class="pagination-btn"><i class="fas fa-chevron-right"></i></button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-content">
+            <div class="footer-section">
+                <h3>About Us</h3>
+                <p>Welcome to Grow Well, where transformative learning awaits. Our courses and programs empower individuals for personal and professional growth.</p>
+            </div>
+            <div class="footer-section">
+                <h3>Quick Links</h3>
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="./About/index.html">About Us</a></li>
+                    <li><a href="courses.html">Courses</a></li>
+                    <li><a href="./Contact/">Contact</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h3>Contact Us</h3>
+                <p><i class="fas fa-phone"></i> 8882494752</p>
+                <p><i class="fas fa-envelope"></i> info@growwell.com</p>
+                <p><i class="fas fa-map-marker-alt"></i> B-05, Alpha-I Commercial Belt, Block E, Greater Noida</p>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2024 GrowWell. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const mobileFilterToggle = document.getElementById('mobileFilterToggle');
+            const coursesSidebar = document.getElementById('coursesSidebar');
+            
+            mobileFilterToggle.addEventListener('click', function() {
+                coursesSidebar.classList.toggle('active');
+                
+                if (coursesSidebar.classList.contains('active')) {
+                    mobileFilterToggle.innerHTML = '<i class="fas fa-times"></i> Hide Filters';
+                } else {
+                    mobileFilterToggle.innerHTML = '<i class="fas fa-filter"></i> Show Filters';
+                }
+            });
+            
+            // Filter functionality
+            const filterButton = document.querySelector('.filter-button');
+            const resetButton = document.querySelector('.reset-filters');
+            const categoryCheckboxes = document.querySelectorAll('input[id^="cat-"]');
+            const typeCheckboxes = document.querySelectorAll('input[id^="type-"]');
+            const courseCards = document.querySelectorAll('.modern-course-card');
+            
+            filterButton.addEventListener('click', function() {
+                const selectedCategories = [];
+                categoryCheckboxes.forEach(checkbox => {
+                    if (checkbox.checked) {
+                        selectedCategories.push(checkbox.id.replace('cat-', ''));
+                    }
+                });
+                courseCards.forEach(card => {
+                    const cardCategory = card.getAttribute('data-category');
+                    
+                    if (selectedCategories.includes(cardCategory)) {
+                        card.style.display = 'block';
+                    } else {
+                        card.style.display = 'none';
+                    }
+                });
+                if (window.innerWidth < 992) {
+                    coursesSidebar.classList.remove('active');
+                    mobileFilterToggle.innerHTML = '<i class="fas fa-filter"></i> Show Filters';
+                }
+            });
+            
+            resetButton.addEventListener('click', function() {
+                categoryCheckboxes.forEach(checkbox => {
+                    checkbox.checked = true;
+                });
+                
+                typeCheckboxes.forEach(checkbox => {
+                    checkbox.checked = true;
+                });
+                
+                // Show all courses
+                courseCards.forEach(card => {
+                    card.style.display = 'block';
+                });
+            });
+            const animateOnScroll = () => {
+                const elements = document.querySelectorAll('.modern-course-card');
+                
+                elements.forEach(element => {
+                    const elementTop = element.getBoundingClientRect().top;
+                    const elementBottom = element.getBoundingClientRect().bottom;
+                    
+                    if (elementTop < window.innerHeight && elementBottom > 0) {
+                        element.style.opacity = '1';
+                        element.style.transform = 'translateY(0)';
+                    }
+                });
+            };
+            
+            // Initial animation setup
+            document.querySelectorAll('.modern-course-card').forEach(element => {
+                element.style.opacity = '0';
+                element.style.transform = 'translateY(20px)';
+                element.style.transition = 'all 0.5s ease-out';
+            });
+            
+            // Listen for scroll events
+            window.addEventListener('scroll', animateOnScroll);
+            
+            // Initial check for elements in view
+            window.addEventListener('load', animateOnScroll);
+        });
+    </script>
+</body>
+</html>
+

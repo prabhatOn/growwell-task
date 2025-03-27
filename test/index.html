@@ -1,0 +1,536 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Courses - GrowWell Banking & Financial Skills Training</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="styles.css">
+    <script defer src="script.js"></script>
+    <script defer src="script.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- Navbar -->
+    <nav class="navbar">
+        <div class="logo">
+            <img src="./images/Grow-Well-Logo.jpg" alt="GrowWell Logo"> 
+        </div>
+        <ul class="nav-links">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="./About/index.html">About</a></li>
+            <li><a href="courses.html" class="active">Courses</a></li>
+            <li><a href="./Contact/">Contact</a></li>
+        </ul>
+        <div class="search-container">
+            <input type="text" class="search-bar" placeholder="What do you want to learn?">
+            <button class="search-btn"><i class="fas fa-search"></i></button>
+        </div>
+        <div class="auth-buttons">
+            <a href="#" class="login">Log In</a>
+            <a href="#" class="join">Join for Free</a>
+        </div>
+        <div class="menu-toggle" id="menuToggle">
+            <i class="fas fa-bars"></i>
+        </div>
+    </nav>
+
+    <!-- Courses Hero Section -->
+    <section class="courses-hero-section">
+        <div class="courses-hero-container">
+            <div class="courses-hero-content">
+                <h1>Explore Our <span>Courses</span></h1>
+                <p>Discover comprehensive banking and financial training programs designed to elevate your career</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Courses Filter Section -->
+    <section class="courses-filter-section">
+        <div class="filter-container">
+            <div class="filter-tabs">
+                <button class="filter-tab active" data-category="all">All Courses</button>
+                <button class="filter-tab" data-category="banking">Banking</button>
+                <button class="filter-tab" data-category="finance">Finance</button>
+                <button class="filter-tab" data-category="software">IT & Software</button>
+                <button class="filter-tab" data-category="language">Language</button>
+            </div>
+            <div class="filter-actions">
+                <div class="filter-dropdown">
+                    <button class="dropdown-btn">
+                        <i class="fas fa-sort"></i> Sort By <i class="fas fa-chevron-down"></i>
+                    </button>
+                    <div class="dropdown-content">
+                        <a href="#" data-sort="popular">Most Popular</a>
+                        <a href="#" data-sort="newest">Newest</a>
+                        <a href="#" data-sort="price-low">Price: Low to High</a>
+                        <a href="#" data-sort="price-high">Price: High to Low</a>
+                    </div>
+                </div>
+                <div class="view-toggle">
+                    <button class="view-btn active" data-view="grid"><i class="fas fa-th-large"></i></button>
+                    <button class="view-btn" data-view="list"><i class="fas fa-list"></i></button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Courses Stats -->
+    <section class="courses-stats-section">
+        <div class="courses-stats-container">
+            <div class="courses-stat">
+                <span class="stat-number">50+</span>
+                <p>Courses Available</p>
+            </div>
+            <div class="courses-stat">
+                <span class="stat-number">7,500+</span>
+                <p>Students Enrolled</p>
+            </div>
+            <div class="courses-stat">
+                <span class="stat-number">4.8</span>
+                <p>Average Rating</p>
+            </div>
+            <div class="courses-stat">
+                <span class="stat-number">95%</span>
+                <p>Placement Rate</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Featured Courses -->
+    <section class="featured-courses-section">
+        <div class="section-header">
+            <h2>Featured Courses</h2>
+            <p>Our most popular and highly-rated banking and finance courses</p>
+        </div>
+        <div class="featured-courses-container">
+            <div class="featured-course-card">
+                <div class="featured-course-image">
+                    <img src="./images/banking.jpeg" alt="Advanced Banking Operations">
+                    <div class="course-badge">Bestseller</div>
+                </div>
+                <div class="featured-course-content">
+                    <div class="course-category">Banking</div>
+                    <h3>Advanced Banking Operations</h3>
+                    <div class="course-rating">
+                        <div class="stars">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star-half-alt"></i>
+                        </div>
+                        <span>4.8 (245 reviews)</span>
+                    </div>
+                    <div class="course-details">
+                        <div class="detail">
+                            <i class="fas fa-clock"></i>
+                            <span>12 Weeks</span>
+                        </div>
+                        <div class="detail">
+                            <i class="fas fa-video"></i>
+                            <span>48 Lessons</span>
+                        </div>
+                        <div class="detail">
+                            <i class="fas fa-signal"></i>
+                            <span>Intermediate</span>
+                        </div>
+                    </div>
+                    <div class="course-price">
+                        <span class="price">₹14,999</span>
+                        <span class="original-price">₹19,999</span>
+                    </div>
+                    <a href="#" class="btn-enroll">Enroll Now</a>
+                </div>
+            </div>
+
+            <div class="featured-course-card">
+                <div class="featured-course-image">
+                    <img src="./images/skillProgram/cover.jpeg" alt="Financial Risk Management">
+                    <div class="course-badge">New</div>
+                </div>
+                <div class="featured-course-content">
+                    <div class="course-category">Finance</div>
+                    <h3>Financial Risk Management</h3>
+                    <div class="course-rating">
+                        <div class="stars">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                        </div>
+                        <span>5.0 (87 reviews)</span>
+                    </div>
+                    <div class="course-details">
+                        <div class="detail">
+                            <i class="fas fa-clock"></i>
+                            <span>8 Weeks</span>
+                        </div>
+                        <div class="detail">
+                            <i class="fas fa-video"></i>
+                            <span>36 Lessons</span>
+                        </div>
+                        <div class="detail">
+                            <i class="fas fa-signal"></i>
+                            <span>Advanced</span>
+                        </div>
+                    </div>
+                    <div class="course-price">
+                        <span class="price">₹16,999</span>
+                        <span class="original-price">₹21,999</span>
+                    </div>
+                    <a href="#" class="btn-enroll">Enroll Now</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- All Courses Section -->
+    <section class="all-courses-section">
+        <div class="section-header">
+            <h2>Browse All Courses</h2>
+            <p>Comprehensive training programs to advance your career in banking and finance</p>
+        </div>
+        
+        <div class="courses-grid" id="coursesGrid">
+            <!-- Course Card 1 -->
+            <div class="course-card" data-category="banking">
+                <div class="card-background blue">
+                    <div class="icon-container">
+                        <i class="fas fa-university"></i>
+                    </div>
+                </div>
+                <img src="./images/banking.jpeg" alt="Retail Banking Fundamentals" class="professional-image">
+                <div class="course-content">
+                    <h3>Retail Banking Fundamentals</h3>
+                    <p>Master the essentials of retail banking operations, customer service, and product knowledge.</p>
+                    <div class="course-details">
+                        <div class="key-features">
+                            <h4>Key Features:</h4>
+                            <ul>
+                                <li><i class="fas fa-check"></i> Comprehensive banking operations</li>
+                                <li><i class="fas fa-check"></i> Customer relationship management</li>
+                                <li><i class="fas fa-check"></i> Banking products and services</li>
+                            </ul>
+                        </div>
+                        <div class="course-highlights">
+                            <div class="highlight">
+                                <i class="fas fa-clock"></i>
+                                <span>8 Weeks</span>
+                            </div>
+                            <div class="highlight">
+                                <i class="fas fa-certificate"></i>
+                                <span>Certification</span>
+                            </div>
+                        </div>
+                        <div class="course-price-tag">
+                            <span class="price">₹12,999</span>
+                        </div>
+                        <a href="#" class="btn-explore">Explore Course <i class="fas fa-arrow-right"></i></a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Course Card 2 -->
+            <div class="course-card" data-category="finance">
+                <div class="card-background orange">
+                    <div class="icon-container">
+                        <i class="fas fa-chart-line"></i>
+                    </div>
+                </div>
+                <img src="./images/skillProgram/cover.jpeg" alt="Investment Banking" class="professional-image">
+                <div class="course-content">
+                    <h3>Investment Banking</h3>
+                    <p>Learn the principles of investment banking, financial modeling, and valuation techniques.</p>
+                    <div class="course-details">
+                        <div class="key-features">
+                            <h4>Key Features:</h4>
+                            <ul>
+                                <li><i class="fas fa-check"></i> Financial modeling</li>
+                                <li><i class="fas fa-check"></i> Valuation methodologies</li>
+                                <li><i class="fas fa-check"></i> M&A transactions</li>
+                            </ul>
+                        </div>
+                        <div class="course-highlights">
+                            <div class="highlight">
+                                <i class="fas fa-clock"></i>
+                                <span>12 Weeks</span>
+                            </div>
+                            <div class="highlight">
+                                <i class="fas fa-certificate"></i>
+                                <span>Certification</span>
+                            </div>
+                        </div>
+                        <div class="course-price-tag">
+                            <span class="price">₹18,999</span>
+                        </div>
+                        <a href="#" class="btn-explore">Explore Course <i class="fas fa-arrow-right"></i></a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Course Card 3 -->
+            <div class="course-card" data-category="software">
+                <div class="card-background yellow">
+                    <div class="icon-container">
+                        <i class="fas fa-laptop-code"></i>
+                    </div>
+                </div>
+                <img src="./images/IT.jpg" alt="Banking Software Systems" class="professional-image">
+                <div class="course-content">
+                    <h3>Banking Software Systems</h3>
+                    <p>Gain expertise in core banking software, financial technology, and digital banking platforms.</p>
+                    <div class="course-details">
+                        <div class="key-features">
+                            <h4>Key Features:</h4>
+                            <ul>
+                                <li><i class="fas fa-check"></i> Core banking applications</li>
+                                <li><i class="fas fa-check"></i> Digital banking platforms</li>
+                                <li><i class="fas fa-check"></i> Banking IT infrastructure</li>
+                            </ul>
+                        </div>
+                        <div class="course-highlights">
+                            <div class="highlight">
+                                <i class="fas fa-clock"></i>
+                                <span>10 Weeks</span>
+                            </div>
+                            <div class="highlight">
+                                <i class="fas fa-certificate"></i>
+                                <span>Certification</span>
+                            </div>
+                        </div>
+                        <div class="course-price-tag">
+                            <span class="price">₹15,999</span>
+                        </div>
+                        <a href="#" class="btn-explore">Explore Course <i class="fas fa-arrow-right"></i></a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Course Card 4 -->
+            <div class="course-card" data-category="language">
+                <div class="card-background blue">
+                    <div class="icon-container">
+                        <i class="fas fa-language"></i>
+                    </div>
+                </div>
+                <img src="./images/ielts.jpeg" alt="Business English for Banking" class="professional-image">
+                <div class="course-content">
+                    <h3>Business English for Banking</h3>
+                    <p>Develop professional English language skills specifically tailored for the banking industry.</p>
+                    <div class="course-details">
+                        <div class="key-features">
+                            <h4>Key Features:</h4>
+                            <ul>
+                                <li><i class="fas fa-check"></i> Banking terminology</li>
+                                <li><i class="fas fa-check"></i> Client communication</li>
+                                <li><i class="fas fa-check"></i> Professional writing</li>
+                            </ul>
+                        </div>
+                        <div class="course-highlights">
+                            <div class="highlight">
+                                <i class="fas fa-clock"></i>
+                                <span>6 Weeks</span>
+                            </div>
+                            <div class="highlight">
+                                <i class="fas fa-certificate"></i>
+                                <span>Certification</span>
+                            </div>
+                        </div>
+                        <div class="course-price-tag">
+                            <span class="price">₹9,999</span>
+                        </div>
+                        <a href="#" class="btn-explore">Explore Course <i class="fas fa-arrow-right"></i></a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Course Card 5 -->
+            <div class="course-card" data-category="banking">
+                <div class="card-background orange">
+                    <div class="icon-container">
+                        <i class="fas fa-credit-card"></i>
+                    </div>
+                </div>
+                <img src="./images/banking.jpeg" alt="Credit Analysis & Risk Management" class="professional-image">
+                <div class="course-content">
+                    <h3>Credit Analysis & Risk Management</h3>
+                    <p>Learn to evaluate creditworthiness, manage risk, and make informed lending decisions.</p>
+                    <div class="course-details">
+                        <div class="key-features">
+                            <h4>Key Features:</h4>
+                            <ul>
+                                <li><i class="fas fa-check"></i> Credit evaluation techniques</li>
+                                <li><i class="fas fa-check"></i> Risk assessment models</li>
+                                <li><i class="fas fa-check"></i> Portfolio management</li>
+                            </ul>
+                        </div>
+                        <div class="course-highlights">
+                            <div class="highlight">
+                                <i class="fas fa-clock"></i>
+                                <span>9 Weeks</span>
+                            </div>
+                            <div class="highlight">
+                                <i class="fas fa-certificate"></i>
+                                <span>Certification</span>
+                            </div>
+                        </div>
+                        <div class="course-price-tag">
+                            <span class="price">₹14,499</span>
+                        </div>
+                        <a href="#" class="btn-explore">Explore Course <i class="fas fa-arrow-right"></i></a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Course Card 6 -->
+            <div class="course-card" data-category="finance">
+                <div class="card-background yellow">
+                    <div class="icon-container">
+                        <i class="fas fa-coins"></i>
+                    </div>
+                </div>
+                <img src="./images/skillProgram/cover1.jpeg" alt="Wealth Management" class="professional-image">
+                <div class="course-content">
+                    <h3>Wealth Management</h3>
+                    <p>Master the art of wealth management, financial planning, and investment advisory services.</p>
+                    <div class="course-details">
+                        <div class="key-features">
+                            <h4>Key Features:</h4>
+                            <ul>
+                                <li><i class="fas fa-check"></i> Asset allocation strategies</li>
+                                <li><i class="fas fa-check"></i> Portfolio construction</li>
+                                <li><i class="fas fa-check"></i> Client relationship management</li>
+                            </ul>
+                        </div>
+                        <div class="course-highlights">
+                            <div class="highlight">
+                                <i class="fas fa-clock"></i>
+                                <span>10 Weeks</span>
+                            </div>
+                            <div class="highlight">
+                                <i class="fas fa-certificate"></i>
+                                <span>Certification</span>
+                            </div>
+                        </div>
+                        <div class="course-price-tag">
+                            <span class="price">₹16,499</span>
+                        </div>
+                        <a href="#" class="btn-explore">Explore Course <i class="fas fa-arrow-right"></i></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="pagination">
+            <button class="pagination-btn"><i class="fas fa-chevron-left"></i></button>
+            <button class="pagination-btn active">1</button>
+            <button class="pagination-btn">2</button>
+            <button class="pagination-btn">3</button>
+            <button class="pagination-btn">...</button>
+            <button class="pagination-btn">8</button>
+            <button class="pagination-btn"><i class="fas fa-chevron-right"></i></button>
+        </div>
+    </section>
+
+    <!-- Course Categories Section -->
+    <section class="course-categories-section">
+        <div class="section-header">
+            <h2>Course Categories</h2>
+            <p>Explore our diverse range of specialized training programs</p>
+        </div>
+        <div class="categories-container">
+            <div class="category-card">
+                <div class="category-icon">
+                    <i class="fas fa-university"></i>
+                </div>
+                <h3>Banking Operations</h3>
+                <p>12 Courses</p>
+            </div>
+            <div class="category-card">
+                <div class="category-icon">
+                    <i class="fas fa-chart-line"></i>
+                </div>
+                <h3>Financial Markets</h3>
+                <p>8 Courses</p>
+            </div>
+            <div class="category-card">
+                <div class="category-icon">
+                    <i class="fas fa-laptop-code"></i>
+                </div>
+                <h3>Banking Technology</h3>
+                <p>10 Courses</p>
+            </div>
+            <div class="category-card">
+                <div class="category-icon">
+                    <i class="fas fa-coins"></i>
+                </div>
+                <h3>Wealth Management</h3>
+                <p>6 Courses</p>
+            </div>
+            <div class="category-card">
+                <div class="category-icon">
+                    <i class="fas fa-credit-card"></i>
+                </div>
+                <h3>Credit & Risk</h3>
+                <p>9 Courses</p>
+            </div>
+            <div class="category-card">
+                <div class="category-icon">
+                    <i class="fas fa-language"></i>
+                </div>
+                <h3>Business Language</h3>
+                <p>5 Courses</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Call to Action Section -->
+    <section class="courses-cta-section">
+        <div class="courses-cta-container">
+            <div class="cta-content">
+                <h2>Not Sure Which Course to Choose?</h2>
+                <p>Schedule a free consultation with our career advisors to find the perfect program for your goals</p>
+                <div class="cta-buttons">
+                    <a href="#" class="btn-consultation">Book a Consultation</a>
+                    <a href="#" class="btn-catalog">Download Course Catalog</a>
+                </div>
+            </div>
+            <div class="cta-image">
+                <img src="./images/skillProgram/cover.jpeg" alt="Career Consultation">
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-content">
+            <div class="footer-section">
+                <h3>About Us</h3>
+                <p>Welcome to Grow Well, where transformative learning awaits. Our courses and programs empower individuals for personal and professional growth.</p>
+            </div>
+            <div class="footer-section">
+                <h3>Quick Links</h3>
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="./About/index.html">About Us</a></li>
+                    <li><a href="courses.html">Courses</a></li>
+                    <li><a href="./Contact/">Contact</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h3>Contact Us</h3>
+                <p><i class="fas fa-phone"></i> 8882494752</p>
+                <p><i class="fas fa-envelope"></i> info@growwell.com</p>
+                <p><i class="fas fa-map-marker-alt"></i> B-05, Alpha-I Commercial Belt, Block E, Greater Noida</p>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2024 GrowWell. All rights reserved.</p>
+        </div>
+    </footer>
+</body>
+</html>
+
