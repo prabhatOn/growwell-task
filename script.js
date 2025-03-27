@@ -74,3 +74,117 @@ document.querySelectorAll('.stat-item, .course-card, .testimonial-card').forEach
 window.addEventListener('scroll', animateOnScroll);
 // Initial check for elements in view
 window.addEventListener('load', animateOnScroll);
+
+// Testimonial Slider
+let currentSlide = 0;
+const testimonialSlider = document.querySelector('.testimonials-slider');
+const testimonialCards = document.querySelectorAll('.testimonial-card');
+const dots = document.querySelectorAll('.dot');
+const totalSlides = testimonialCards.length;
+
+// Clone all slides for infinite loop
+function setupInfiniteSlider() {
+    // Clone all slides and append them
+    testimonialCards.forEach(card => {
+        const clone = card.cloneNode(true);
+        testimonialSlider.appendChild(clone);
+    });
+    
+    // Set initial position
+    const slideWidth = testimonialCards[0].offsetWidth + 30;
+    testimonialSlider.style.transform = `translateX(-${slideWidth}px)`;
+}
+
+// Function to update dots
+function updateDots() {
+    dots.forEach((dot, index) => {
+        dot.classList.toggle('active', index === currentSlide);
+    });
+}
+
+// Function to handle the transition
+function handleTransition(direction) {
+    testimonialSlider.style.transition = 'transform 0.5s ease-in-out';
+    const slideWidth = testimonialCards[0].offsetWidth + 30; // 30px is the gap
+    
+    if (direction === 1 && currentSlide === totalSlides - 1) {
+        // Moving forward from last slide
+        currentSlide = 0;
+        testimonialSlider.style.transform = `translateX(-${(totalSlides + 1) * slideWidth}px)`;
+        
+        setTimeout(() => {
+            testimonialSlider.style.transition = 'none';
+            testimonialSlider.style.transform = `translateX(-${slideWidth}px)`;
+        }, 500);
+    } else if (direction === -1 && currentSlide === 0) {
+        // Moving backward from first slide
+        currentSlide = totalSlides - 1;
+        testimonialSlider.style.transform = `translateX(0px)`;
+        
+        setTimeout(() => {
+            testimonialSlider.style.transition = 'none';
+            testimonialSlider.style.transform = `translateX(-${totalSlides * slideWidth}px)`;
+        }, 500);
+    } else {
+        // Normal slide transition
+        currentSlide = (currentSlide + direction + totalSlides) % totalSlides;
+        testimonialSlider.style.transform = `translateX(-${(currentSlide + 1) * slideWidth}px)`;
+    }
+    
+    updateDots();
+}
+
+// Function to move the slider
+function moveSlider(direction) {
+    handleTransition(direction);
+}
+
+// Function to move to specific slide
+function moveToSlide(slideIndex) {
+    const direction = slideIndex - currentSlide;
+    if (direction !== 0) {
+        handleTransition(direction > 0 ? 1 : -1);
+    }
+}
+
+// Initialize slider
+document.addEventListener('DOMContentLoaded', () => {
+    setupInfiniteSlider();
+
+    // Add click events to dots
+    dots.forEach((dot, index) => {
+        dot.addEventListener('click', () => moveToSlide(index));
+    });
+
+    // Add click events to arrows
+    document.querySelector('.prev-btn').addEventListener('click', () => moveSlider(-1));
+    document.querySelector('.next-btn').addEventListener('click', () => moveSlider(1));
+
+    // Auto-slide functionality
+    let autoSlideInterval = setInterval(() => moveSlider(1), 5000);
+
+    // Pause auto-slide on hover
+    testimonialSlider.addEventListener('mouseenter', () => clearInterval(autoSlideInterval));
+    testimonialSlider.addEventListener('mouseleave', () => {
+        autoSlideInterval = setInterval(() => moveSlider(1), 5000);
+    });
+
+    // Handle window resize
+    window.addEventListener('resize', () => {
+        const slideWidth = testimonialCards[0].offsetWidth + 30;
+        testimonialSlider.style.transition = 'none';
+        testimonialSlider.style.transform = `translateX(-${(currentSlide + 1) * slideWidth}px)`;
+    });
+
+    // Handle transition end
+    testimonialSlider.addEventListener('transitionend', () => {
+        if (currentSlide === 0 || currentSlide === totalSlides - 1) {
+            testimonialSlider.style.transition = 'none';
+            const slideWidth = testimonialCards[0].offsetWidth + 30;
+            testimonialSlider.style.transform = `translateX(-${(currentSlide + 1) * slideWidth}px)`;
+            setTimeout(() => {
+                testimonialSlider.style.transition = 'transform 0.5s ease-in-out';
+            }, 10);
+        }
+    });
+});
