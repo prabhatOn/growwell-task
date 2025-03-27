@@ -1,0 +1,364 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>GrowWell - Banking & Financial Skills Training</title>
+        <link rel="stylesheet" href="styles.css">
+        <script defer src="script.js"></script>
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+        <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    </head>
+    
+<body>
+    <nav class="navbar">
+        <div class="logo">
+            <img src="./images/Grow-Well-Logo.jpg" alt="GrowWell Logo"> 
+        </div>
+        <ul class="nav-links">
+            <li><a href="#" class="active">Home</a></li>
+            <li><a href="#">About</a></li>
+            <li><a href="#">Courses</a></li>
+            <li><a href="#">Contact</a></li>
+        </ul>
+        <div class="search-container">
+            <input type="text" class="search-bar" placeholder="What do you want to learn?">
+            <button class="search-btn"><i class="fas fa-search"></i></button>
+        </div>
+        <div class="auth-buttons">
+            <a href="#" class="login">Log In</a>
+            <a href="#" class="join">Join for Free</a>
+        </div>
+        <div class="menu-toggle" id="menuToggle">
+            <i class="fas fa-bars"></i>
+        </div>
+    </nav>
+
+    <section class="hero-section">
+        <div class="content-container">
+            <div class="content-text">
+                <h3>Welcome to GrowWell</h3>
+                <h1>We are an online platform for learning <span>Banking & Financial Skills.</span></h1>
+                <p>Discover the path to excellence and empowerment at Grow Well, 
+                a financial and banking training institute. Let your dreams take flight in our inspiring learning environment.</p>
+                <div class="services-list">
+                    <div class="service-item">
+                        <i class="fas fa-check-circle"></i>
+                        <span>Industry Expert Mentors</span>
+                    </div>
+                    <div class="service-item">
+                        <i class="fas fa-check-circle"></i>
+                        <span>Placement Assistance</span>
+                    </div>
+                    <div class="service-item">
+                        <i class="fas fa-check-circle"></i>
+                        <span>Real Banking Scenarios</span>
+                    </div>
+                    <div class="service-item">
+                        <i class="fas fa-check-circle"></i>
+                        <span>Live Online Classes</span>
+                    </div>
+                </div>
+                <div class="cta-buttons">
+                    <a href="#" class="btn-primary">Explore Courses</a>
+                    <a href="#" class="btn-secondary">Learn More</a>
+                </div>
+            </div>
+    
+            <div class="form-section">
+                <div class="form-container">
+                    <div class="form-background"></div>
+                    <div class="form-content">
+                        <h3>Download Brochure!</h3>
+                        <p>Link will be shared on your mobile number.</p>
+                        <form>
+                            <div class="form-group">
+                                <input type="text" placeholder="Name" required>
+                            </div>
+                            <div class="form-group">
+                                <input type="email" placeholder="Email Address" required>
+                            </div>
+                            <div class="form-group">
+                                <input type="tel" placeholder="Phone Number" required>
+                            </div>
+                            <button type="submit" class="btn-download">Download Now</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="stats-section">
+        <div class="stats-container">
+            <div class="stat-item">
+                <i class="fas fa-clock"></i>
+                <h3>8+ Years</h3>
+                <p>of Experience</p>
+            </div>
+            <div class="stat-item">
+                <i class="fas fa-users"></i>
+                <h3>7500+</h3>
+                <p>Students Trained</p>
+            </div>
+            <div class="stat-item">
+                <i class="fas fa-chalkboard-teacher"></i>
+                <h3>10</h3>
+                <p>Expert Instructors</p>
+            </div>
+            <div class="stat-item">
+                <i class="fas fa-book-reader"></i>
+                <h3>300+</h3>
+                <p>Hours Content</p>
+            </div>
+        </div>
+    </section>
+
+    <section class="courses-section">
+        <div class="section-header">
+            <h2>Browse Online Course Categories</h2>
+            <p>Explore our comprehensive range of professional training courses</p>
+        </div>
+        <div class="courses-grid">
+            <div class="course-card">
+                <div class="card-background orange">
+                    <div class="icon-container">
+                        <i class="fas fa-laptop-code"></i>
+                    </div>
+                </div>
+                <img src="./images/IT.jpg" alt="IT & Software Course" class="professional-image">
+                <div class="course-content">
+                    <h3>IT & Software Course</h3>
+                    <p>Comprehensive training in essential software skills required for modern banking and financial services. Master the tools that drive the industry.</p>
+                    <div class="course-details">
+                        <div class="key-features">
+                            <h4>Key Features:</h4>
+                            <ul>
+                                <li><i class="fas fa-check"></i> Industry-relevant software tools</li>
+                                <li><i class="fas fa-check"></i> Hands-on practical training</li>
+                                <li><i class="fas fa-check"></i> Real-world project experience</li>
+                            </ul>
+                        </div>
+                        <div class="course-highlights">
+                            <div class="highlight">
+                                <i class="fas fa-clock"></i>
+                                <span>100+ Hours</span>
+                            </div>
+                            <div class="highlight">
+                                <i class="fas fa-certificate"></i>
+                                <span>Certification</span>
+                            </div>
+                        </div>
+                        <a href="#" class="btn-explore">Explore Course <i class="fas fa-arrow-right"></i></a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="course-card">
+                <div class="card-background blue">
+                    <div class="icon-container">
+                        <i class="fas fa-university"></i>
+                    </div>
+                </div>
+                <img src="./images/banking.jpeg" alt="Banking Training" class="professional-image">
+                <div class="course-content">
+                    <h3>Banking Training</h3>
+                    <p>Comprehensive program covering Banking, Financial Services, Capital Markets, Fintech, and regulatory frameworks. Perfect for aspiring banking professionals.</p>
+                    <div class="course-details">
+                        <div class="key-features">
+                            <h4>Key Features:</h4>
+                            <ul>
+                                <li><i class="fas fa-check"></i> Industry expert mentors</li>
+                                <li><i class="fas fa-check"></i> Placement assistance</li>
+                                <li><i class="fas fa-check"></i> Real banking scenarios</li>
+                            </ul>
+                        </div>
+                        
+                        <a href="#" class="btn-explore">Explore Course <i class="fas fa-arrow-right"></i></a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="course-card">
+                <div class="card-background yellow">
+                    <div class="icon-container">
+                        <i class="fas fa-language"></i>
+                    </div>
+                </div>
+                <img src="./images/ielts.jpeg" alt="IELTS Training" class="professional-image">
+                <div class="course-content">
+                    <h3>IELTS Training Online</h3>
+                    <p>Professional IELTS preparation course designed to help you achieve your target score. Expert guidance for all IELTS modules.</p>
+                    <div class="course-details">
+                        <div class="key-features">
+                            <h4>Key Features:</h4>
+                            <ul>
+                                <li><i class="fas fa-check"></i> Mock tests & evaluations</li>
+                                <li><i class="fas fa-check"></i> Speaking practice sessions</li>
+                                <li><i class="fas fa-check"></i> Study materials included</li>
+                            </ul>
+                        </div>
+                        <div class="course-highlights">
+                            <div class="highlight">
+                                <i class="fas fa-users"></i>
+                                <span>Small Batches</span>
+                            </div>
+                            <div class="highlight">
+                                <i class="fas fa-video"></i>
+                                <span>Live Classes</span>
+                            </div>
+                        </div>
+                        <a href="#" class="btn-explore">Explore Course <i class="fas fa-arrow-right"></i></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="skill-program-section">
+        <div class="skill-program-container">
+            <div class="skill-program-images">
+                <img src="./images/skillProgram/cover.jpeg" alt="Banking Training" class="skill-image">
+                <div class="dotted-pattern"></div>
+            </div>
+            
+            <div class="skill-program-content">
+                <h2>Skill Program in Banking</h2>
+                <p class="program-description">
+                    Introducing our comprehensive online blended learning program designed specifically for graduates, 
+                    equipping them with essential skills in areas such as Banking, Financial Services, Capital Markets, 
+                    Fintech, regulatory bodies, and more.
+                </p>
+
+                <div class="program-objective">
+                    <h3>Program Objective</h3>
+                    <p>
+                        The primary objective of this program is to prepare participants for a career as Relationship Managers. 
+                        As Relationship Managers, individuals play a pivotal role in adding value to both the bank and its customers. 
+                        They possess the ability to identify and understand customers' financial needs, offering tailored solutions 
+                        to meet those requirements.
+                    </p>
+                </div>
+
+                <div class="learner-outcomes">
+                    <h3>Learner Outcomes</h3>
+                    <ul class="benefits-list">
+                        <li><i class="fas fa-check-circle"></i> Customer acquisition and relationship management skills</li>
+                        <li><i class="fas fa-check-circle"></i> Understanding of banking and financial services</li>
+                        <li><i class="fas fa-check-circle"></i> Knowledge of capital markets and Fintech</li>
+                        <li><i class="fas fa-check-circle"></i> Industry-ready from day one</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="certificate-program-section">
+        <div class="certificate-program-container">
+            <div class="program-content">
+                <h2>Certificate Program in Banking and Insurance</h2>
+                <p class="program-description">
+                    This course offers exceptional opportunities for first-generation graduates and undergraduates, 
+                    opening up numerous job prospects across various industries.
+                </p>
+
+                <div class="program-details">
+                    <p>
+                        The Banking sector encompasses a wide array of fields, including loans, investments, 
+                        insurance, mutual funds, stocks, and wealth management. The Banking and Finance industry 
+                        in India alone is valued at Rs. 81 trillion and is projected to become the world's 5th 
+                        largest by 2020 and 3rd largest by 2025.
+                    </p>
+                    <p>
+                        With rapid growth and expansion, the sector presents abundant opportunities at various levels.
+                    </p>
+                </div>
+
+                <div class="program-highlights">
+                    <div class="highlight-stat">
+                        <span>12+ Years</span>
+                        <p>of Program Success</p>
+                    </div>
+                    <div class="highlight-stat">
+                        <span>20,000+</span>
+                        <p>Successful Placements</p>
+                    </div>
+                </div>
+
+                <div class="program-features">
+                    <h3>Program Features</h3>
+                    <ul class="features-list">
+                        <li><i class="fas fa-check-circle"></i> Expedited path from college to banking career</li>
+                        <li><i class="fas fa-check-circle"></i> Comprehensive industry coverage</li>
+                        <li><i class="fas fa-check-circle"></i> Proven placement track record</li>
+                        <li><i class="fas fa-check-circle"></i> Expert-led training modules</li>
+                    </ul>
+                </div>
+
+                <div class="program-price">
+                    <div class="price-tag">
+                        <span class="amount">₹17,405</span>
+                        <span class="details">(₹14,750 + GST)</span>
+                    </div>
+                    <a href="#" class="btn-enroll">Enroll Now</a>
+                </div>
+            </div>
+
+            <div class="program-image-container">
+                <img src="./images/skillProgram/cover1.jpeg" alt="Banking Program" class="program-image">
+                <div class="dotted-overlay"></div>
+            </div>
+        </div>
+    </section>
+
+    <section class="testimonials-section">
+        <div class="section-header">
+            <h2>What Our Students Say</h2>
+            <p>Success stories from our graduates</p>
+        </div>
+        <div class="testimonials-grid">
+            <div class="testimonial-card">
+                <div class="testimonial-content">
+                    <i class="fas fa-quote-left"></i>
+                    <p>"Highly recommended! The Grow Well training institute equipped me with the skills I needed for a successful career in banking."</p>
+                </div>
+                <div class="testimonial-author">
+                    <img src="./images/testimonial1.jpg" alt="Suraj Pal">
+                    <div>
+                        <h4>Suraj Pal</h4>
+                        <p>Gurugram</p>
+                    </div>
+                </div>
+            </div>
+            <!-- Add more testimonial cards as needed -->
+        </div>
+    </section>
+
+    <footer class="footer">
+        <div class="footer-content">
+            <div class="footer-section">
+                <h3>About Us</h3>
+                <p>Welcome to Grow Well, where transformative learning awaits. Our courses and programs empower individuals for personal and professional growth.</p>
+            </div>
+            <div class="footer-section">
+                <h3>Quick Links</h3>
+                <ul>
+                    <li><a href="#">Home</a></li>
+                    <li><a href="#">About Us</a></li>
+                    <li><a href="#">Courses</a></li>
+                    <li><a href="#">Contact</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h3>Contact Us</h3>
+                <p><i class="fas fa-phone"></i> 8882494752</p>
+                <p><i class="fas fa-envelope"></i> hr@growwell.in</p>
+                <p><i class="fas fa-map-marker-alt"></i> B-05, Alpha-I Commercial Belt, Block E, Greater Noida</p>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2024 GrowWell. All rights reserved.</p>
+        </div>
+    </footer>
+</body>
+</html>
