@@ -23,12 +23,7 @@ body {
     background-color: var(--primary-bg);
     color: var(--text-primary);
     line-height: 1.6;
-}
-
-
-body {
-    line-height: 1.6;
-    color: var(--text-dark);
+    overflow-x: hidden;
 }
 
 /* Navbar Styles */
@@ -45,6 +40,7 @@ body {
     left: 0;
     z-index: 1000;
     transition: all 0.3s ease;
+    flex-wrap: wrap;
 }
 
 .navbar.scrolled {
@@ -58,7 +54,7 @@ body {
     align-items: center;
     font-size: 1.5rem;
     font-weight: bold;
-    color: #007bff;
+    color: var(--accent-color);
     cursor: pointer;
 }
 
@@ -75,7 +71,7 @@ body {
 
 .nav-links a {
     text-decoration: none;
-    color: var(--text-dark);
+    color: var(--text-primary);
     font-weight: 500;
     transition: color 0.3s ease;
     position: relative;
@@ -88,7 +84,7 @@ body {
     left: 0;
     width: 0;
     height: 2px;
-    background: var(--primary-color);
+    background: var(--accent-color);
     transition: width 0.3s ease;
 }
 
@@ -124,7 +120,7 @@ body {
     background: none;
     cursor: pointer;
     font-size: 1.2rem;
-    color: #007bff;
+    color: var(--accent-color);
 }
 
 /* Authentication Buttons */
@@ -143,22 +139,22 @@ body {
 }
 
 .auth-buttons .login {
-    color: #007bff;
-    border: 1px solid #007bff;
+    color: var(--accent-color);
+    border: 1px solid var(--accent-color);
 }
 
 .auth-buttons .join {
-    background: #007bff;
+    background: var(--accent-color);
     color: white;
 }
 
 .auth-buttons .login:hover {
-    background: #007bff;
+    background: var(--accent-color);
     color: white;
 }
 
 .auth-buttons .join:hover {
-    background: #0056b3;
+    background: #0369a1;
 }
 
 /* Responsive - Mobile Menu */
@@ -166,6 +162,7 @@ body {
     display: none;
     font-size: 1.8rem;
     cursor: pointer;
+    color: var(--accent-color);
 }
 
 main {
@@ -255,7 +252,9 @@ main {
 .about-image img {
     width: 100%;
     border-radius: 20px;
-    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+    box-shadow: var(--shadow-lg);
+    height: auto;
+    object-fit: cover;
 }
 
 .mission-vision {
@@ -284,9 +283,9 @@ main {
     margin-bottom: 1rem;
 }
 
-/* Footer styles from your provided CSS */
+/* Footer styles */
 .footer {
-    background:  #01050b;
+    background: #01050b;
     color: var(--white);
     padding: 4rem 5% 2rem;
 }
@@ -339,51 +338,167 @@ main {
     border-top: 1px solid rgba(255, 255, 255, 0.1);
 }
 
-/* Responsive Design */
-@media (max-width: 768px) {
-    .logo {
-        max-width: 150px;
-    }
+/* Animation for stats */
+.stat-item.animate {
+    opacity: 1 !important;
+    transform: translateY(0) !important;
+    transition: all 0.6s ease-out !important;
+}
 
-    .nav-content {
-        flex-direction: row;
-        flex-wrap: wrap;
-        justify-content: space-between;
-        gap: 1rem;
+/* RESPONSIVE STYLES */
+
+/* Large Screens */
+@media (max-width: 1200px) {
+    .about-grid {
+        gap: 3rem;
+    }
+    
+    .hero h1 {
+        font-size: 2.8rem;
+    }
+}
+
+/* Medium Screens */
+@media (max-width: 992px) {
+    .menu-toggle {
+        display: block;
     }
     
     .nav-links {
-        display: none;
+        position: fixed;
+        top: 70px;
+        left: -100%;
         width: 100%;
+        height: calc(100vh - 70px);
+        background: var(--white);
         flex-direction: column;
-        text-align: center;
-        padding: 1rem 0;
+        align-items: center;
+        padding: 2rem 0;
+        transition: all 0.4s ease;
+        z-index: 999;
     }
     
     .nav-links.active {
-        display: flex;
-        background-color: var(--white);
-        border-top: 1px solid var(--border-color);
+        left: 0;
     }
+    
+    .search-container, .auth-buttons {
+        display: none;
+    }
+    
+    .about-grid {
+        gap: 2.5rem;
+    }
+}
 
-    .menu-toggle {
-        display: block;
-        order: 2;
+/* Tablets */
+@media (max-width: 768px) {
+    .navbar {
+        padding: 0.8rem 5%;
+    }
+    
+    .logo img {
+        height: 35px;
     }
     
     main {
         margin-top: 80px;
     }
-
+    
     .about-grid {
         grid-template-columns: 1fr;
+    }
+    
+    .hero h1 {
+        font-size: 2.5rem;
+    }
+    
+    .stats {
+        grid-template-columns: repeat(2, 1fr);
+    }
+    
+    .about-image {
+        order: -1;
+        margin-bottom: 2rem;
+    }
+    
+    .about-image img {
+        max-height: 400px;
+        width: 100%;
+        object-fit: cover;
+    }
+    
+    .mission-vision {
+        grid-template-columns: 1fr;
+    }
+}
+
+/* Mobile Phones */
+@media (max-width: 576px) {
+    .navbar {
+        padding: 0.7rem 4%;
+    }
+    
+    .logo img {
+        height: 30px;
+    }
+    
+    main {
+        padding: 1.5rem 4%;
+    }
+    
+    .hero {
+        padding: 3rem 1rem;
     }
     
     .hero h1 {
         font-size: 2rem;
     }
     
-    .stats {
-        grid-template-columns: repeat(2, 1fr);
+    .subtitle {
+        font-size: 1rem;
     }
-} 
+    
+    .highlight {
+        font-size: 1.1rem;
+    }
+    
+    .stats {
+        gap: 1rem;
+    }
+    
+    .stat-item {
+        padding: 1rem;
+    }
+    
+    .stat-item h3 {
+        font-size: 1.8rem;
+    }
+    
+    .section-box {
+        padding: 1.5rem;
+    }
+    
+    .section-box h2 {
+        font-size: 1.5rem;
+    }
+    
+    .footer {
+        padding: 3rem 4% 1.5rem;
+    }
+}
+
+/* Small Mobile Phones */
+@media (max-width: 375px) {
+    .hero h1 {
+        font-size: 1.8rem;
+    }
+    
+    .stats {
+        grid-template-columns: 1fr;
+    }
+    
+    .stat-item {
+        margin-bottom: 0.5rem;
+    }
+}

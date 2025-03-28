@@ -12,6 +12,32 @@ document.addEventListener('DOMContentLoaded', () => {
                 icon.classList.toggle('fa-times');
             }
         });
+        
+        // Close menu when clicking outside
+        document.addEventListener('click', (e) => {
+            if (navLinks.classList.contains('active') && 
+                !navLinks.contains(e.target) && 
+                !menuToggle.contains(e.target)) {
+                navLinks.classList.remove('active');
+                const icon = menuToggle.querySelector('i');
+                if (icon) {
+                    icon.classList.add('fa-bars');
+                    icon.classList.remove('fa-times');
+                }
+            }
+        });
+        
+        // Close menu when clicking on a link
+        navLinks.querySelectorAll('a').forEach(link => {
+            link.addEventListener('click', () => {
+                navLinks.classList.remove('active');
+                const icon = menuToggle.querySelector('i');
+                if (icon) {
+                    icon.classList.add('fa-bars');
+                    icon.classList.remove('fa-times');
+                }
+            });
+        });
     }
 
     // Scroll Animation for Stats
@@ -41,14 +67,17 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // Smooth Scroll for Navigation Links
     const smoothScroll = (e) => {
-        e.preventDefault();
         const targetId = e.currentTarget.getAttribute('href');
-        if (targetId && targetId !== '#') {
+        if (targetId && targetId.startsWith('#') && targetId !== '#') {
+            e.preventDefault();
             const targetElement = document.querySelector(targetId);
             if (targetElement) {
-                targetElement.scrollIntoView({
-                    behavior: 'smooth',
-                    block: 'start'
+                const navbarHeight = document.querySelector('.navbar').offsetHeight;
+                const targetPosition = targetElement.getBoundingClientRect().top + window.pageYOffset - navbarHeight;
+                
+                window.scrollTo({
+                    top: targetPosition,
+                    behavior: 'smooth'
                 });
             }
         }
@@ -69,28 +98,34 @@ document.addEventListener('DOMContentLoaded', () => {
             }
 
             timeoutId = setTimeout(() => {
-                const shadowValue = window.scrollY > 50 
-                    ? '0 4px 20px rgba(0,0,0,0.1)' 
-                    : '0 2px 10px rgba(0,0,0,0.1)';
-                
-                navbar.style.boxShadow = shadowValue;
+                if (window.scrollY > 50) {
+                    navbar.style.boxShadow = '0 4px 20px rgba(0,0,0,0.1)';
+                    navbar.classList.add('scrolled');
+                } else {
+                    navbar.style.boxShadow = '0 2px 10px rgba(0,0,0,0.1)';
+                    navbar.classList.remove('scrolled');
+                }
             }, 10);
         };
 
         window.addEventListener('scroll', handleScroll);
         
         // Add transition for smooth shadow change
-        navbar.style.transition = 'box-shadow 0.3s ease';
+        navbar.style.transition = 'box-shadow 0.3s ease, padding 0.3s ease';
     }
+    
+    // Handle window resize
+    window.addEventListener('resize', () => {
+        if (window.innerWidth > 992) {
+            const navLinks = document.querySelector('.nav-links');
+            if (navLinks && navLinks.classList.contains('active')) {
+                navLinks.classList.remove('active');
+                const icon = document.querySelector('#menuToggle i');
+                if (icon) {
+                    icon.classList.add('fa-bars');
+                    icon.classList.remove('fa-times');
+                }
+            }
+        }
+    });
 });
-
-// Add CSS animation class
-const style = document.createElement('style');
-style.textContent = `
-    .stat-item.animate {
-        opacity: 1 !important;
-        transform: translateY(0) !important;
-        transition: all 0.6s ease-out !important;
-    }
-`;
-document.head.appendChild(style);
