@@ -527,34 +527,46 @@
   
   /* Courses Section */
   .courses-section {
-    padding-top: 35px;
-    background: var(--background-light);
+    padding: 4rem 0;
+    background: #f8fafc;
   }
   
   .section-header {
     text-align: center;
     max-width: 800px;
-    margin: 0 auto 4rem;
+    margin: 0 auto 3rem;
+    padding: 0 1rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem;
   }
   
   .section-header h2 {
     font-size: 2.5rem;
-    color: var(--text-dark);
-    margin-bottom: 1rem;
+    color: #1e293b;
+    margin: 0;
+    font-weight: 700;
+    line-height: 1.2;
+    text-align: center;
   }
   
   .section-header p {
-    color: var(--text-light);
     font-size: 1.1rem;
+    color: #64748b;
+    line-height: 1.5;
+    text-align: center;
+    max-width: 600px;
+    margin: 0 auto;
   }
   
   .courses-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-    gap: 2rem;
-    padding: 2rem 5%;
-    max-width: 1400px;
+    max-width: 1200px;
     margin: 0 auto;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+    padding: 0 2rem;
   }
   
   .course-card {
@@ -673,28 +685,32 @@
     background: var(--secondary-color);
   }
   
-  /* Improve courses section responsiveness */
+  /* Responsive styles */
   @media (max-width: 768px) {
-    .courses-grid {
-      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-      gap: 1.5rem;
-      padding: 1.5rem;
+    .courses-section {
+        padding: 3rem 0;
     }
-  
-    .course-card {
-      max-width: 100%;
+
+    .section-header h2 {
+        font-size: 2rem;
     }
-  
-    .professional-image {
-      height: 160px;
+
+    .section-header p {
+        font-size: 1rem;
     }
+  }
   
-    .course-content {
-      padding: 15px;
+  @media (max-width: 480px) {
+    .courses-section {
+        padding: 2rem 0;
     }
-  
-    .course-content h3 {
-      font-size: 1.2rem;
+
+    .section-header {
+        margin-bottom: 2rem;
+    }
+
+    .section-header h2 {
+        font-size: 1.75rem;
     }
   }
   
@@ -910,7 +926,7 @@
     }
   
     .section-header h2 {
-      font-size: 2.4rem;
+      font-size: 2rem;
     }
   }
   
@@ -920,7 +936,7 @@
     }
   
     .section-header h2 {
-      font-size: 2rem;
+      font-size: 1.75rem;
     }
   
     .testimonial-card {
