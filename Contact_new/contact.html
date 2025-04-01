@@ -40,45 +40,76 @@
             
         </section>
 
-        <section class="help-cards-container">
-            <div class="help-card">
-                <div class="card-icon">
-                    <i class="fas fa-phone-alt fa-flip-horizontal"></i>
+        <div class="contact-options">
+            <div class="options-container">
+                <!-- Talk to Sales Card -->
+                <div class="contact-card">
+                    <div class="icon-circle">
+                        <i class="fas fa-phone-alt"></i>
+                    </div>
+                    <div class="card-content">
+                        <h2>Talk to Sales</h2>
+                        <div class="contact-actions">
+                            <a href="tel:+1234567890" class="phone-number">+1 (234) 567-890</a>
+                            <span class="timing">Mon-Fri from 8am to 5pm</span>
+                            <button class="view-more">
+                                Contact Sales <i class="fas fa-arrow-right"></i>
+                            </button>
+                        </div>
+                    </div>
                 </div>
-                <h2>Talk to Sales</h2>
-                <p>Interested in GrowWell's courses? Chat with our team.</p>
-                <div class="contact-info">
-                    <a href="tel:+918882494752" class="phone-link">+91 8882494752</a>
-                    <p class="timing">Mon-Sat 9:00 AM - 6:00 PM</p>
-                </div>
-            </div>
 
-            <div class="help-card">
-                <div class="card-icon">
-                    <i class="fas fa-envelope"></i>
+                <!-- Support Card -->
+                <div class="contact-card">
+                    <div class="icon-circle">
+                        <i class="fas fa-envelope"></i>
+                    </div>
+                    <div class="card-content">
+                        <h2>Contact Support</h2>
+                        <div class="contact-actions">
+                            <a href="mailto:support@growwell.com" class="email-link">support@growwell.com</a>
+                            <span class="timing">24/7 Support Available</span>
+                            <button class="view-more">
+                                Get Support <i class="fas fa-arrow-right"></i>
+                            </button>
+                        </div>
+                    </div>
                 </div>
-                <h2>Email Support</h2>
-                <p>Send us an email and we'll get back to you.</p>
-                <div class="contact-info">
-                    <a href="mailto:info@growwell.com" class="email-link">info@growwell.com</a>
-                    <p class="timing">24/7 Email Support</p>
-                </div>
-            </div>
 
-            <div class="help-card">
-                <div class="card-icon">
-                    <i class="fas fa-map-marker-alt"></i>
-                </div>
-                <h2>Visit Campus</h2>
-                <p>Come visit our learning center.</p>
-                <div class="contact-info">
-                    <p class="address">B-05, Alpha-I Commercial Belt,<br>Block E, Greater Noida</p>
+                <!-- Visit Us Card -->
+                <div class="contact-card">
+                    <div class="icon-circle">
+                        <i class="fas fa-map-marker-alt"></i>
+                    </div>
+                    <div class="card-content">
+                        <h2>Visit Our Office</h2>
+                        <div class="contact-actions">
+                            <span class="address-text">Greater Noida, Uttar Pradesh 201310</span>
+                            <span class="timing">Open Mon-Fri, 9am-6pm</span>
+                            <button class="view-more">
+                                Get Directions <i class="fas fa-arrow-right"></i>
+                            </button>
+                        </div>
+                    </div>
                 </div>
             </div>
-        </section>
+        </div>
 
         <section class="contact-map-section">
             <div class="contact-map-container">
+                <!-- Map Side -->
+                <div class="map-container">
+                    <div class="map-card">
+                        <h2>Our Location</h2>
+                        <iframe 
+                            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3507.720953416682!2d77.05907677512326!3d28.45782707576068!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x390d19002336e493%3A0x902dbbb8acebec88!2sBridge%20Group%20Solutions!5e0!3m2!1sen!2sin!4v1743490425341!5m2!1sen!2sin" 
+                            allowfullscreen="" 
+                            loading="lazy"
+                            referrerpolicy="no-referrer-when-downgrade">
+                        </iframe>
+                    </div>
+                </div>
+
                 <!-- Contact Form Side -->
                 <div class="form-container">
                     <div class="form-header">
@@ -89,45 +120,30 @@
                         <div class="form-grid">
                             <div class="form-group">
                                 <label for="name">Full Name</label>
-                                <input type="text" id="name" name="name" required>
+                                <input type="text" id="name" name="name" placeholder="Enter your full name" required>
                             </div>
                             <div class="form-group">
                                 <label for="email">Email Address</label>
-                                <input type="email" id="email" name="email" required>
+                                <input type="email" id="email" name="email" placeholder="Enter your email" required>
                             </div>
                             <div class="form-group">
                                 <label for="phone">Phone Number</label>
-                                <input type="tel" id="phone" name="phone" required>
+                                <input type="tel" id="phone" name="phone" placeholder="Enter your phone number" required>
                             </div>
                             <div class="form-group">
                                 <label for="subject">Subject</label>
-                                <input type="text" id="subject" name="subject" required>
+                                <input type="text" id="subject" name="subject" placeholder="Enter subject" required>
                             </div>
                         </div>
                         <div class="form-group full-width">
                             <label for="message">Your Message</label>
-                            <textarea id="message" name="message" rows="4" required></textarea>
+                            <textarea id="message" name="message" rows="4" placeholder="Write your message here..." required></textarea>
                         </div>
                         <button type="submit" class="submit-btn">
                             Send Message
                             <i class="fas fa-paper-plane"></i>
                         </button>
                     </form>
-                </div>
-
-                <!-- Map Side -->
-                <div class="map-container">
-                    <div class="map-card">
-                        <h2>Our Location</h2>
-                        <iframe 
-                            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3507.720953416682!2d77.05907677512326!3d28.45782707576068!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x390d19002336e493%3A0x902dbbb8acebec88!2sBridge%20Group%20Solutions!5e0!3m2!1sen!2sin!4v1743490425341!5m2!1sen!2sin" 
-                            width="100%" 
-                            height="100%" 
-                            style="border:0;" 
-                            allowfullscreen="" 
-                            loading="lazy">
-                        </iframe>
-                    </div>
                 </div>
             </div>
         </section>
