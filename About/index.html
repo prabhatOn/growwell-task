@@ -4,20 +4,20 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>About - Grow Well</title>
-    <link rel="stylesheet" href="../styles.css">
     <link rel="stylesheet" href="styles.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
-    <script defer src="script.js"></script>
 </head>
 <body>
     <nav class="navbar">
         <div class="logo">
-            <img src="../images/Grow-Well-Logo.png" alt="GrowWell Logo"> 
+            <a href="../index.html">
+                <img src="../images/Grow-Well-Logo.png" alt="GrowWell Logo">
+            </a>
         </div>
         <ul class="nav-links">
-            <li><a href="../index.html" >Home</a></li>
-            <li><a href="./About/index.html" class="active">About</a></li>
+            <li><a href="../index.html">Home</a></li>
+            <li><a href="./index.html" class="active">About</a></li>
             <li><a href="../courses.html">Courses</a></li>
             <li><a href="../Contact_new/contact.html">Contact</a></li>
         </ul>
@@ -26,17 +26,34 @@
             <button class="search-btn"><i class="fas fa-search"></i></button>
         </div>
         <div class="auth-buttons">
-            <a href="#" class="login">Log In</a>
-            <a href="#" class="join">Join for Free</a>
+            <a href="../Login/index.html" class="login">Log In</a>
+            <a href="../SignUp/index.html" class="join">Join for Free</a>
         </div>
         <div class="menu-toggle" id="menuToggle">
             <i class="fas fa-bars"></i>
         </div>
     </nav>
+    <!-- Add mobile menu -->
+    <div class="mobile-menu">
+        <div class="mobile-search">
+            <input type="text" placeholder="What do you want to learn?">
+            <button><i class="fas fa-search"></i></button>
+        </div>
+        <ul class="mobile-nav-links">
+            <li><a href="../index.html">Home</a></li>
+            <li><a href="./index.html" class="active">About</a></li>
+            <li><a href="../Courses/index.html">Courses</a></li>
+            <li><a href="../Contact/index.html">Contact</a></li>
+        </ul>
+        <div class="mobile-auth">
+            <a href="../Login/index.html" class="login">Log In</a>
+            <a href="../SignUp/index.html" class="join">Join for Free</a>
+        </div>
+    </div>
 
     <main class="about-main">
         <div class="about-container">
-            <!-- Left Content Section  -->
+            <!-- Left Content Section -->
             <div class="content-left">
                 <h1>
                     We deliver
@@ -107,9 +124,9 @@
                 <h3>Quick Links</h3>
                 <ul>
                     <li><a href="../index.html">Home</a></li>
-                    <li><a href="./index.html">About Us</a></li>
-                    <li><a href="../Courses/index.html">Courses</a></li>
-                    <li><a href="../Contact/index.html">Contact</a></li>
+                    <li><a href="./About/index.html">About Us</a></li>
+                    <li><a href="../courses.html">Courses</a></li>
+                    <li><a href="./contact.html">Contact</a></li>
                 </ul>
             </div>
             <div class="footer-section">
@@ -123,5 +140,7 @@
             <p>&copy; 2024 GrowWell. All rights reserved.</p>
         </div>
     </footer>
+
+    <script src="script.js"></script>
 </body>
 </html> 
