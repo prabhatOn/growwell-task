@@ -91,9 +91,6 @@
     width: 100%;
   }
   
-  .nav-links a.active {
-    color: #3b82f6;
-  }
   
   /* Search Bar */
   .search-container {
@@ -156,12 +153,17 @@
   .auth-buttons .join:hover {
     background: #007bff;
   }
-  /* Responsive - Mobile Menu */
+  /* Menu Toggle */
   .menu-toggle {
     display: none;
-    font-size: 1.8rem;
+    font-size: 1.5rem;
     cursor: pointer;
-    color: var(--accent-color);
+    color: var(--text-dark);
+    transition: color 0.3s ease;
+  }
+  
+  .menu-toggle:hover {
+    color: var(--primary-color);
   }
   
   /* Main Content */
@@ -747,6 +749,11 @@
     
     .search-container, .auth-buttons {
         display: none;
+    }
+    
+    .navbar.active {
+        background: var(--white);
+        box-shadow: var(--shadow-sm);
     }
     
     .hero-text-content h1 {

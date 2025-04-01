@@ -34,82 +34,46 @@ const observer = new IntersectionObserver((entries) => {
 
 // Start observing the stats grid
 document.addEventListener('DOMContentLoaded', () => {
-    const statsGrid = document.querySelector('.stats-grid');
-    if (statsGrid) {
-        observer.observe(statsGrid);
-    }
+    const menuToggle = document.getElementById('menuToggle');
+    const navLinks = document.querySelector('.nav-links');
 
-    // Expandable sections
-    const expandableItems = document.querySelectorAll('.expandable');
-    
-    expandableItems.forEach(item => {
-        const header = item.querySelector('.link-header');
+    if (menuToggle && navLinks) {
+        menuToggle.addEventListener('click', () => {
+            navLinks.classList.toggle('active');
+            const icon = menuToggle.querySelector('i');
+            if (icon) {
+                icon.classList.toggle('fa-bars');
+                icon.classList.toggle('fa-times');
+            }
+        });
         
-        header.addEventListener('click', () => {
-            // Close other open items
-            expandableItems.forEach(otherItem => {
-                if (otherItem !== item && otherItem.classList.contains('active')) {
-                    otherItem.classList.remove('active');
+        // Close menu when clicking outside
+        document.addEventListener('click', (e) => {
+            if (navLinks.classList.contains('active') && 
+                !navLinks.contains(e.target) && 
+                !menuToggle.contains(e.target)) {
+                navLinks.classList.remove('active');
+                const icon = menuToggle.querySelector('i');
+                navLinks.classList.remove('active');
+                if (icon) {
+                    icon.classList.add('fa-bars');
+                    icon.classList.remove('fa-times');
+                }
+            }
+        });
+        
+        // Close menu when clicking on a link
+        navLinks.querySelectorAll('a').forEach(link => {
+            link.addEventListener('click', () => {
+                navLinks.classList.remove('active');
+                const icon = menuToggle.querySelector('i');
+                if (icon) {
+                    icon.classList.add('fa-bars');
+                    icon.classList.remove('fa-times');
                 }
             });
-            
-            // Toggle current item
-            item.classList.toggle('active');
         });
-    });
-
-    // Mobile menu functionality with improved animations
-    const menuToggle = document.getElementById('menuToggle');
-    const mobileMenu = document.querySelector('.mobile-menu');
-    
-    // Create overlay element
-    const overlay = document.createElement('div');
-    overlay.className = 'menu-overlay';
-    document.body.appendChild(overlay);
-
-    function openMobileMenu() {
-        mobileMenu.classList.add('active');
-        overlay.classList.add('active');
-        document.body.style.overflow = 'hidden';
     }
-
-    function closeMobileMenu() {
-        mobileMenu.classList.add('closing');
-        overlay.classList.remove('active');
-        document.body.style.overflow = '';
-        
-        setTimeout(() => {
-            mobileMenu.classList.remove('active', 'closing');
-        }, 300);
-    }
-
-    menuToggle.addEventListener('click', () => {
-        if (!mobileMenu.classList.contains('active')) {
-            openMobileMenu();
-        } else {
-            closeMobileMenu();
-        }
-    });
-
-    // Close mobile menu when clicking overlay
-    overlay.addEventListener('click', closeMobileMenu);
-
-    // Close mobile menu when clicking outside
-    document.addEventListener('click', (e) => {
-        if (!mobileMenu.contains(e.target) && 
-            !menuToggle.contains(e.target) && 
-            mobileMenu.classList.contains('active')) {
-            closeMobileMenu();
-        }
-    });
-
-    // Handle mobile menu link clicks
-    const mobileLinks = document.querySelectorAll('.mobile-nav-links a');
-    mobileLinks.forEach(link => {
-        link.addEventListener('click', () => {
-            closeMobileMenu();
-        });
-    });
 });
 
 // Add hover effect for stat items
