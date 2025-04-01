@@ -3,14 +3,17 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>About Us - Grow Well</title>
+    <title>About - Grow Well</title>
     <link rel="stylesheet" href="styles.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
 </head>
 <body>
     <nav class="navbar">
         <div class="logo">
-            <img src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/grow_logo.jpg-bCJuXiulOIFon4deBVZY9FzN77XIpn.jpeg" alt="GrowWell Logo"> 
+            <a href="../index.html">
+                <img src="../images/Grow-Well-Logo.jpg" alt="GrowWell Logo">
+            </a>
         </div>
         <ul class="nav-links">
             <li><a href="../index.html">Home</a></li>
@@ -23,62 +26,94 @@
             <button class="search-btn"><i class="fas fa-search"></i></button>
         </div>
         <div class="auth-buttons">
-            <a href="#" class="login">Log In</a>
-            <a href="#" class="join">Join for Free</a>
+            <a href="../Login/index.html" class="login">Log In</a>
+            <a href="../SignUp/index.html" class="join">Join for Free</a>
         </div>
         <div class="menu-toggle" id="menuToggle">
             <i class="fas fa-bars"></i>
         </div>
     </nav>
+    <!-- Add mobile menu -->
+    <div class="mobile-menu">
+        <div class="mobile-search">
+            <input type="text" placeholder="What do you want to learn?">
+            <button><i class="fas fa-search"></i></button>
+        </div>
+        <ul class="mobile-nav-links">
+            <li><a href="../index.html">Home</a></li>
+            <li><a href="./index.html" class="active">About</a></li>
+            <li><a href="../Courses/index.html">Courses</a></li>
+            <li><a href="../Contact/index.html">Contact</a></li>
+        </ul>
+        <div class="mobile-auth">
+            <a href="../Login/index.html" class="login">Log In</a>
+            <a href="../SignUp/index.html" class="join">Join for Free</a>
+        </div>
+    </div>
 
-    <main>
-        <section class="hero">
-            <h1>About Grow Well!</h1>
-            <p class="subtitle">Learn, Grow and Succeed!</p>
-        </section>
-
-        <section class="about-content">
-            <div class="about-grid">
-                <div class="about-text">
-                    <p class="highlight">At <span class="brand">Grow Well</span>, we are passionate about empowering individuals with the skills and knowledge needed to excel in their careers and personal growth.</p>
+    <main class="about-main">
+        <div class="about-container">
+            <!-- Left Content Section -->
+            <div class="content-left">
+                <h1>
+                    We deliver
+                    <span class="highlight">transformative,</span><br>
+                    <span class="highlight">objective learning</span><br>
+                    to students and professionals.
+                </h1>
+                <p class="subtitle">
+                    Our expert guidance and tools enable faster, smarter learning and stronger 
+                    performance on an individual's career-critical priorities.
+                </p>
+                
+                <div class="quick-links">
+                    <div class="link-item expandable">
+                        <div class="link-header">
+                            <span>Our Mission</span>
+                            <i class="fas fa-chevron-down"></i>
+                        </div>
+                        <div class="link-content">
+                            <p>Our mission is to create a platform where learners can access high-quality education tailored to industry demands. We aim to bridge the gap between theoretical knowledge and practical application, ensuring every student gains the confidence to succeed in competitive environments.</p>
+                        </div>
+                    </div>
                     
-                    <div class="stats">
-                        <div class="stat-item">
-                            <h3>8+</h3>
-                            <p>Years of Experience</p>
+                    <div class="link-item expandable">
+                        <div class="link-header">
+                            <span>Our Vision</span>
+                            <i class="fas fa-chevron-down"></i>
                         </div>
-                        <div class="stat-item">
-                            <h3>7,500+</h3>
-                            <p>Students Trained</p>
-                        </div>
-                        <div class="stat-item">
-                            <h3>300+</h3>
-                            <p>Hours of Content</p>
-                        </div>
-                        <div class="stat-item">
-                            <h3>10</h3>
-                            <p>Expert Instructors</p>
+                        <div class="link-content">
+                            <p>To become a globally recognized leader in skill-based education, empowering individuals to unlock their true potential and achieve their dreams. Through innovation, excellence, and commitment, Grow Well envisions shaping a future where learning is accessible, engaging, and transformative for all.</p>
                         </div>
                     </div>
                 </div>
-                <div class="about-image">
-                    <img src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/grow_about.jpg-NQG8I4eHfgPZTSjBGHWewVQxfZGlau.jpeg" alt="Students learning">
-                </div>
             </div>
 
-            <div class="mission-vision">
-                <div class="section-box">
-                    <h2>Our Mission</h2>
-                    <p>Our mission is to create a platform where learners can access high-quality education tailored to industry demands. We aim to bridge the gap between theoretical knowledge and practical application, ensuring every student gains the confidence to succeed in competitive environments.</p>
-                </div>
-                <div class="section-box">
-                    <h2>Our Vision</h2>
-                    <p>To become a globally recognized leader in skill-based education, empowering individuals to unlock their true potential and achieve their dreams. Through innovation, excellence, and commitment, Grow Well envisions shaping a future where learning is accessible, engaging, and transformative for all.</p>
+            <!-- Right Stats Section -->
+            <div class="content-right">
+                <h2 class="about-title">About Grow Well</h2>
+                <div class="stats-grid">
+                    <div class="stat-item">
+                        <h3><span class="counter" data-target="8">0</span>+</h3>
+                        <p>Years of experience in training and education excellence.</p>
+                    </div>
+                    <div class="stat-item">
+                        <h3><span class="counter" data-target="7500">0</span>+</h3>
+                        <p>Students successfully trained globally across our programs.</p>
+                    </div>
+                    <div class="stat-item">
+                        <h3><span class="counter" data-target="300">0</span>+</h3>
+                        <p>Hours of meticulously curated content across all courses.</p>
+                    </div>
+                    <div class="stat-item">
+                        <h3><span class="counter" data-target="10">0</span>+</h3>
+                        <p>Expert instructors providing industry-relevant guidance.</p>
+                    </div>
                 </div>
             </div>
-        </section>
+        </div>
+        
     </main>
-
     <footer class="footer">
         <div class="footer-content">
             <div class="footer-section">
@@ -90,14 +125,14 @@
                 <ul>
                     <li><a href="../index.html">Home</a></li>
                     <li><a href="./index.html">About Us</a></li>
-                    <li><a href="../courses.html">Courses</a></li>
-                    <li><a href="../Contact_new/contact.html">Contact</a></li>
+                    <li><a href="../Courses/index.html">Courses</a></li>
+                    <li><a href="../Contact/index.html">Contact</a></li>
                 </ul>
             </div>
             <div class="footer-section">
                 <h3>Contact Us</h3>
                 <p><i class="fas fa-phone"></i> 8882494752</p>
-                <p><i class="fas fa-envelope"></i> <a href="mailto:info@growwell.com">info@growwell.com</a></p>
+                <p><i class="fas fa-envelope"></i> hr@growwell.in</p>
                 <p><i class="fas fa-map-marker-alt"></i> B-05, Alpha-I Commercial Belt, Block E, Greater Noida</p>
             </div>
         </div>
@@ -108,4 +143,4 @@
 
     <script src="script.js"></script>
 </body>
-</html>
+</html> 

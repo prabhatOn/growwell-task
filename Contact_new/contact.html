@@ -15,8 +15,8 @@
         <ul class="nav-links">
             <li><a href="../index.html" >Home</a></li>
             <li><a href="../About/index.html">About</a></li>
-            <li><a href="../courses.html" class="active">Courses</a></li>
-            <li><a href="./contact.html">Contact</a></li>
+            <li><a href="../courses.html">Courses</a></li>
+            <li><a href="./contact.html" class="active">Contact</a></li>
         </ul>
         <div class="search-container">
             <input type="text" class="search-bar" placeholder="What do you want to learn?">
@@ -32,58 +32,58 @@
     </nav>
 
     <main class="contact-main">
-        <!-- Hero Section -->
-        <section class="hero-section">
-            <div class="hero-content">
-                <div class="hero-text-content">
-                    <h1>Get in touch</h1>
-                    <p>Want to get in touch? We'd love to hear from you. Here's how you can reach us.</p>
-                </div>
+        <section class="help-hero">
+            <div class="help-hero-content">
+                <h1>How can we help you today?</h1>
+               
             </div>
-            <div class="hero-overlay"></div>
-            <div class="hero-image"></div>
+            
         </section>
 
-        <!-- Contact Options -->
-        <section class="contact-options">
-            <div class="options-container">
-                <div class="contact-card sales">
-                    <div class="card-content">
-                        <div class="icon-circle">
-                            <i class="fas fa-phone-alt"></i>
-                        </div>
-                        <h2>Talk to Sales</h2>
-                        <p>Interested in Grow Well's courses? Just pick up the phone to chat with a member of our team.</p>
-                        <div class="contact-actions">
-                            <a href="tel:8882494752" class="phone-number">+91 8882494752</a>
-                            <button class="view-more">
-                                View all numbers
-                                <i class="fas fa-chevron-down"></i>
-                            </button>
-                        </div>
-                    </div>
+        <section class="help-cards-container">
+            <div class="help-card">
+                <div class="card-icon">
+                    <i class="fas fa-phone-alt fa-flip-horizontal"></i>
                 </div>
+                <h2>Talk to Sales</h2>
+                <p>Interested in GrowWell's courses? Chat with our team.</p>
+                <div class="contact-info">
+                    <a href="tel:+918882494752" class="phone-link">+91 8882494752</a>
+                    <p class="timing">Mon-Sat 9:00 AM - 6:00 PM</p>
+                </div>
+            </div>
 
-                <div class="contact-card support">
-                    <div class="card-content">
-                        <div class="icon-circle">
-                            <i class="fas fa-comments"></i>
-                        </div>
-                        <h2>Contact Support</h2>
-                        <p>Sometimes you need a little help from your friends. Or a Grow Well support rep. Don't worry... we're here for you.</p>
-                        <a href="#contact-form" class="cta-button">Contact Support</a>
-                    </div>
+            <div class="help-card">
+                <div class="card-icon">
+                    <i class="fas fa-envelope"></i>
+                </div>
+                <h2>Email Support</h2>
+                <p>Send us an email and we'll get back to you.</p>
+                <div class="contact-info">
+                    <a href="mailto:info@growwell.com" class="email-link">info@growwell.com</a>
+                    <p class="timing">24/7 Email Support</p>
+                </div>
+            </div>
+
+            <div class="help-card">
+                <div class="card-icon">
+                    <i class="fas fa-map-marker-alt"></i>
+                </div>
+                <h2>Visit Campus</h2>
+                <p>Come visit our learning center.</p>
+                <div class="contact-info">
+                    <p class="address">B-05, Alpha-I Commercial Belt,<br>Block E, Greater Noida</p>
                 </div>
             </div>
         </section>
 
-        <!-- Contact Form Section -->
-        <section id="contact-form" class="form-section">
-            <div class="form-container">
-                <div class="form-content">
+        <section class="contact-map-section">
+            <div class="contact-map-container">
+                <!-- Contact Form Side -->
+                <div class="form-container">
                     <div class="form-header">
-                        <h2>Send us a message</h2>
-                        <p>Fill out the form and we'll get back to you as soon as possible.</p>
+                        <h2>Send us a Message</h2>
+                        <p>Fill out the form below and we'll get back to you shortly.</p>
                     </div>
                     <form id="contactForm" class="contact-form">
                         <div class="form-grid">
@@ -95,54 +95,37 @@
                                 <label for="email">Email Address</label>
                                 <input type="email" id="email" name="email" required>
                             </div>
+                            <div class="form-group">
+                                <label for="phone">Phone Number</label>
+                                <input type="tel" id="phone" name="phone" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="subject">Subject</label>
+                                <input type="text" id="subject" name="subject" required>
+                            </div>
                         </div>
-                        <div class="form-group">
-                            <label for="phone">Phone Number</label>
-                            <input type="tel" id="phone" name="phone" required>
-                        </div>
-                        <div class="form-group">
+                        <div class="form-group full-width">
                             <label for="message">Your Message</label>
                             <textarea id="message" name="message" rows="4" required></textarea>
                         </div>
-                        <button type="submit" class="submit-btn submit-button">
+                        <button type="submit" class="submit-btn">
                             Send Message
                             <i class="fas fa-paper-plane"></i>
                         </button>
                     </form>
                 </div>
-                <div class="contact-info">
-                    <div class="info-content">
-                        <div class="info-item">
-                            <i class="fas fa-map-marker-alt"></i>
-                            <div>
-                                <h3>Visit Us</h3>
-                                <p>B – 05, Alpha-I Commercial Belt, Block E, Greater Noida, Uttar Pradesh 201310</p>
-                            </div>
-                        </div>
-                        <div class="info-item">
-                            <i class="fas fa-envelope"></i>
-                            <div>
-                                <h3>Email Us</h3>
-                                <p><a href="mailto:info@growwell.com">info@growwell.com</a></p>
-                            </div>
-                        </div>
-                        <div class="info-item">
-                            <i class="fas fa-clock"></i>
-                            <div>
-                                <h3>Working Hours</h3>
-                                <p>Monday - Saturday: 9:00 AM - 6:00 PM</p>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="map-container">
+
+                <!-- Map Side -->
+                <div class="map-container">
+                    <div class="map-card">
+                        <h2>Our Location</h2>
                         <iframe 
                             src="https://www.google.com/maps/embed?pb=!1m13!1m8!1m3!1d3507.2434508813913!2d77.5116831!3d28.4722141!3m2!1i1024!2i768!4f13.1!3m2!1m1!2s!5e0!3m2!1sen!2sin!4v1743137441204!5m2!1sen!2sin" 
                             width="100%" 
-                            height="300" 
+                            height="100%" 
                             style="border:0;" 
                             allowfullscreen="" 
-                            loading="lazy" 
-                            referrerpolicy="no-referrer-when-downgrade">
+                            loading="lazy">
                         </iframe>
                     </div>
                 </div>

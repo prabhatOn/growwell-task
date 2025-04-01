@@ -1,140 +1,126 @@
-// Mobile Menu Toggle
-document.addEventListener('DOMContentLoaded', () => {
-    const menuToggle = document.getElementById('menuToggle');
-    const navLinks = document.querySelector('.nav-links');
+// Counter animation function
+function animateCounter(element) {
+    const target = parseInt(element.getAttribute('data-target'));
+    const duration = 2000; // 2 seconds
+    const step = 30; // Update every 30ms
+    const increment = (target * step) / duration;
+    let current = 0;
 
-    if (menuToggle && navLinks) {
-        menuToggle.addEventListener('click', () => {
-            navLinks.classList.toggle('active');
-            const icon = menuToggle.querySelector('i');
-            if (icon) {
-                icon.classList.toggle('fa-bars');
-                icon.classList.toggle('fa-times');
-            }
-        });
-        
-        // Close menu when clicking outside
-        document.addEventListener('click', (e) => {
-            if (navLinks.classList.contains('active') && 
-                !navLinks.contains(e.target) && 
-                !menuToggle.contains(e.target)) {
-                navLinks.classList.remove('active');
-                const icon = menuToggle.querySelector('i');
-                if (icon) {
-                    icon.classList.add('fa-bars');
-                    icon.classList.remove('fa-times');
-                }
-            }
-        });
-        
-        // Close menu when clicking on a link
-        navLinks.querySelectorAll('a').forEach(link => {
-            link.addEventListener('click', () => {
-                navLinks.classList.remove('active');
-                const icon = menuToggle.querySelector('i');
-                if (icon) {
-                    icon.classList.add('fa-bars');
-                    icon.classList.remove('fa-times');
-                }
-            });
-        });
-    }
-
-    // Scroll Animation for Stats
-    const statsItems = document.querySelectorAll('.stat-item');
-    
-    if (statsItems.length > 0) {
-        const observerOptions = {
-            threshold: 0.2,
-            rootMargin: '0px 0px -50px 0px'
-        };
-
-        const observer = new IntersectionObserver((entries) => {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    entry.target.classList.add('animate');
-                    observer.unobserve(entry.target); // Stop observing once animated
-                }
-            });
-        }, observerOptions);
-
-        statsItems.forEach(item => {
-            item.style.opacity = '0';
-            item.style.transform = 'translateY(20px)';
-            observer.observe(item);
-        });
-    }
-
-    // Smooth Scroll for Navigation Links
-    const smoothScroll = (e) => {
-        const targetId = e.currentTarget.getAttribute('href');
-        if (targetId && targetId.startsWith('#') && targetId !== '#') {
-            e.preventDefault();
-            const targetElement = document.querySelector(targetId);
-            if (targetElement) {
-                const navbarHeight = document.querySelector('.navbar').offsetHeight;
-                const targetPosition = targetElement.getBoundingClientRect().top + window.pageYOffset - navbarHeight;
-                
-                window.scrollTo({
-                    top: targetPosition,
-                    behavior: 'smooth'
-                });
-            }
+    const timer = setInterval(() => {
+        current += increment;
+        if (current >= target) {
+            element.textContent = target;
+            clearInterval(timer);
+        } else {
+            element.textContent = Math.floor(current);
         }
-    };
+    }, step);
+}
 
-    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-        anchor.addEventListener('click', smoothScroll);
+// Intersection Observer for triggering counter animation
+const observerOptions = {
+    threshold: 0.5
+};
+
+const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+        if (entry.isIntersecting) {
+            const counters = entry.target.querySelectorAll('.counter');
+            counters.forEach(counter => animateCounter(counter));
+            observer.unobserve(entry.target);
+        }
+    });
+}, observerOptions);
+
+// Start observing the stats grid
+document.addEventListener('DOMContentLoaded', () => {
+    const statsGrid = document.querySelector('.stats-grid');
+    if (statsGrid) {
+        observer.observe(statsGrid);
+    }
+
+    // Expandable sections
+    const expandableItems = document.querySelectorAll('.expandable');
+    
+    expandableItems.forEach(item => {
+        const header = item.querySelector('.link-header');
+        
+        header.addEventListener('click', () => {
+            // Close other open items
+            expandableItems.forEach(otherItem => {
+                if (otherItem !== item && otherItem.classList.contains('active')) {
+                    otherItem.classList.remove('active');
+                }
+            });
+            
+            // Toggle current item
+            item.classList.toggle('active');
+        });
     });
 
-    // Add shadow to navbar on scroll with debounce
-    let timeoutId;
-    const navbar = document.querySelector('.navbar');
+    // Mobile menu functionality with improved animations
+    const menuToggle = document.getElementById('menuToggle');
+    const mobileMenu = document.querySelector('.mobile-menu');
     
-    if (navbar) {
-        const handleScroll = () => {
-            if (timeoutId) {
-                clearTimeout(timeoutId);
-            }
+    // Create overlay element
+    const overlay = document.createElement('div');
+    overlay.className = 'menu-overlay';
+    document.body.appendChild(overlay);
 
-            timeoutId = setTimeout(() => {
-                if (window.scrollY > 50) {
-                    navbar.style.boxShadow = '0 4px 20px rgba(0,0,0,0.1)';
-                    navbar.classList.add('scrolled');
-                } else {
-                    navbar.style.boxShadow = '0 2px 10px rgba(0,0,0,0.1)';
-                    navbar.classList.remove('scrolled');
-                }
-            }, 10);
-        };
-
-        window.addEventListener('scroll', handleScroll);
-        
-        // Add transition for smooth shadow change
-        navbar.style.transition = 'box-shadow 0.3s ease, padding 0.3s ease';
+    function openMobileMenu() {
+        mobileMenu.classList.add('active');
+        overlay.classList.add('active');
+        document.body.style.overflow = 'hidden';
     }
-    
-    // Handle window resize
-    window.addEventListener('resize', () => {
-        if (window.innerWidth > 992) {
-            const navLinks = document.querySelector('.nav-links');
-            if (navLinks && navLinks.classList.contains('active')) {
-                navLinks.classList.remove('active');
-                const icon = document.querySelector('#menuToggle i');
-                if (icon) {
-                    icon.classList.add('fa-bars');
-                    icon.classList.remove('fa-times');
-                }
-            }
+
+    function closeMobileMenu() {
+        mobileMenu.classList.add('closing');
+        overlay.classList.remove('active');
+        document.body.style.overflow = '';
+        
+        setTimeout(() => {
+            mobileMenu.classList.remove('active', 'closing');
+        }, 300);
+    }
+
+    menuToggle.addEventListener('click', () => {
+        if (!mobileMenu.classList.contains('active')) {
+            openMobileMenu();
+        } else {
+            closeMobileMenu();
         }
+    });
+
+    // Close mobile menu when clicking overlay
+    overlay.addEventListener('click', closeMobileMenu);
+
+    // Close mobile menu when clicking outside
+    document.addEventListener('click', (e) => {
+        if (!mobileMenu.contains(e.target) && 
+            !menuToggle.contains(e.target) && 
+            mobileMenu.classList.contains('active')) {
+            closeMobileMenu();
+        }
+    });
+
+    // Handle mobile menu link clicks
+    const mobileLinks = document.querySelectorAll('.mobile-nav-links a');
+    mobileLinks.forEach(link => {
+        link.addEventListener('click', () => {
+            closeMobileMenu();
+        });
     });
 });
 
+// Add hover effect for stat items
+document.querySelectorAll('.stat-item').forEach(item => {
+    item.addEventListener('mouseenter', () => {
+        item.style.transform = 'translateY(-10px)';
+        item.style.boxShadow = '0 10px 30px rgba(34, 211, 238, 0.1)';
+    });
 
-
-
-
-
-
-
-
+    item.addEventListener('mouseleave', () => {
+        item.style.transform = 'translateY(0)';
+        item.style.boxShadow = 'none';
+    });
+}); 
