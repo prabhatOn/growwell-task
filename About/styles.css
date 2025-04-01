@@ -479,3 +479,16 @@ html {
     background: rgba(0, 0, 0, 0.1);
 }
 
+/* Add these styles for the quick links animations */
+.link-header i {
+    transition: transform 0.3s ease;
+}
+
+.link-content {
+    transition: all 0.3s ease;
+}
+
+.expandable {
+    cursor: pointer;
+}
+

@@ -74,6 +74,32 @@ document.addEventListener('DOMContentLoaded', () => {
             });
         });
     }
+
+    // Add this new code for quick links functionality
+    const expandableItems = document.querySelectorAll('.expandable');
+    
+    expandableItems.forEach(item => {
+        const header = item.querySelector('.link-header');
+        const content = item.querySelector('.link-content');
+        const icon = header.querySelector('i');
+        
+        header.addEventListener('click', () => {
+            // Toggle the content display
+            content.style.display = content.style.display === 'block' ? 'none' : 'block';
+            
+            // Toggle the icon rotation
+            icon.style.transform = content.style.display === 'block' ? 'rotate(180deg)' : 'rotate(0)';
+            
+            // Toggle active class
+            item.classList.toggle('active');
+        });
+    });
+
+    // Stats grid observer code
+    const statsGrid = document.querySelector('.stats-grid');
+    if (statsGrid) {
+        observer.observe(statsGrid);
+    }
 });
 
 // Add hover effect for stat items
