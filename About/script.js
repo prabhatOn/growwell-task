@@ -102,7 +102,7 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 });
 
-// Add hover effect for stat items
+// Add hover effect for stat items 
 document.querySelectorAll('.stat-item').forEach(item => {
     item.addEventListener('mouseenter', () => {
         item.style.transform = 'translateY(-10px)';
